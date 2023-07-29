@@ -6,6 +6,9 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     cache = models.FloatField(default=0)
 
+    def __str__(self):
+        return self.username
+
 
 class Transaction(models.Model):
     INCOME_TYPE = 'income'
